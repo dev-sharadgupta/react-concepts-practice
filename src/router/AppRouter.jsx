@@ -1,4 +1,5 @@
 import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
+import SimpleComponentExample from "../concepts/Rendering/SimpleComponentExample";
 import RenderingExample from "../concepts/Rendering/RenderingExample";
 import PropsStateExample from "../concepts/PropsState/PropsStateExample";
 import UseEffectExample from "../concepts/Effects/UseEffectExample";
@@ -17,7 +18,8 @@ import KeyExample from "../concepts/Reconciliation/KeyExample";
 function Navbar() {
     return (
         <div style={{ display: "flex", gap: "10px", flexWrap: "wrap" }}>
-            <Link to="/">Rendering</Link>
+            <Link to="/">Simple Component Example</Link>
+            <Link to="/rendering-example">Rendering</Link>
             <Link to="/props-state">PropsState</Link>
             <Link to="/use-effect">useEffect</Link>
             <Link to="/use-layout-effect">useLayoutEffect</Link>
@@ -40,7 +42,8 @@ export default function AppRouter() {
         <BrowserRouter>
             <Navbar />
             <Routes>
-                <Route path="/" element={<RenderingExample />} />
+                <Route path="/" element={<SimpleComponentExample />} />
+                <Route path="/rendering-example" element={<RenderingExample />} />
                 <Route path="/props-state" element={<PropsStateExample />} />
                 <Route path="/use-effect" element={<UseEffectExample />} />
                 <Route path="/use-layout-effect" element={<UseLayoutEffectExample />} />
