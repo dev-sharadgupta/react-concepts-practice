@@ -7,12 +7,33 @@ import { memo, useState } from "react";
 //     return <p>Child Value: {value}</p>
 // }
 
-// Using React.memo Child not Re-render
+// Using memo Child not Re-render
 const Child = memo(function Child({ value }) {
     console.log("Child Render");
 
     return <p>Child Value: {value}</p>
 });
+
+// Another Way to use props 
+// const Child = memo((props) => {
+//     console.log("Child Rerender");
+//     return <p>Child Value: {props.value}</p>
+// });
+
+
+// === For Obj we have to use like this === 
+// const Child = memo(function Child({ value }) {
+//     console.log("Child Render");
+
+//     return <p>Child Value: {value.count}</p>
+// });
+
+// Another Way to use props 
+// const Child = memo((props) => {
+//     console.log("Child Rerender");
+//     return <p>Child Value: {props.value.count}</p>
+// });
+
 
 export default function ReactMemoExample() {
     const [count, setCount] = useState(0);
@@ -32,9 +53,9 @@ export default function ReactMemoExample() {
 
             {/* works well */}
             <Child value={count} />
-            
+
             {/* always re-renders */}
-            {/* <Child obj={{ count }} /> */}
+            {/* <Child value={{ count }} /> */}
 
         </div>
     )

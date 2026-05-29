@@ -13,6 +13,23 @@ export default function UseEffectExample() {
         }
     }, [count]);
 
+    // =========== Dependency Array Example ==============
+    // ----With no dependency 
+    // useEffect(() => {
+    //     console.log("Run Every Render");
+    // })
+
+    // --- with empty dependency
+    // useEffect(() => {
+    //     console.log("Run once only");
+    // }, [])
+
+    // With dependency
+    // useEffect(() => {
+    //     console.log("Runs when count changes");
+    // }, [count]);
+
+
     return (
         <div>
             <h2>useEffect Example</h2>
