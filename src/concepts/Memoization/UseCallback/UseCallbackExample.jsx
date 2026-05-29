@@ -12,9 +12,15 @@ export default function UseCallbackExample() {
 
     console.log("Parent Render");
 
+    // Without useCallback
+    // function handleClick () {
+    //     console.log("Hello");
+    // }
+
+    // With useCallback
     const handleClick = useCallback(() => {
-        console.log("Clicked", count);
-    }, [count]);
+        console.log("Hello");
+    }, [count])
 
     return (
         <div>

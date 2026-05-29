@@ -26,6 +26,16 @@ export default function UseCallbackExampleList() {
                     <Item key={item} item={item} onSelect={handleSelect} />
                 ))}
             </ul>
+
+            {/* Use return if use curly bracket */}
+            {/* <ul>
+                {items.map((item) => {
+                    return (
+                        <Item key={item} item={item} onSelect={handleSelect} />
+                    );
+                })}
+            </ul> */}
+
         </div>
     )
 }
